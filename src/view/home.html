@@ -1,0 +1,24 @@
+<h2 class="itens_link" id="instaladores"> links </h2>
+<br>
+<section class="container">
+
+  <h2>Instaladores Secullum</h2>
+
+  {% for postagem in postagens %}
+  <!-- {#{% if postagem.categoria == 'instSecullum' %} #}-->
+
+  <nav class="navbar navbar-dark bg-dark menu_itens btn" data-original-title="" title="">
+    <strong>{{postagem.nome}}</strong>
+    <div class="btn-group" role="group">
+      <a href="{{postagem.link}}" class="btn btn-te" target="_blank">Abrir</a>
+      <button data-clipboard-text="{{postagem.link}}" title="" data-toggle="popover" class="btn btn-te" data-content="Copiado" value="teste" data-original-title="Copiado!">Copiar</button>
+     
+    </div>
+  </nav>
+
+  <!-- {#{% endif %}#} -->
+  {% endfor %}
+
+</section>
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style/style.css">
+  <link rel="stylesheet" href="/src/style/menu.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="section-header "></header>
+  <span class="screen-darken"></span>
+
+  <div>
+
+    <button data-trigger="navbar_main" class="d-lg-none fix btn btn-menu" type="button"> Menu </button>
+
+
+
+    <!-- ============= COMPONENT ============== -->
+    <nav id="navbar_main" class="mobile-offcanvas nav_block navbar navbar-expand-lg navbar-dark bg-green">
+      <div class="container-fluid">
+        <div class="offcanvas-header">
+          <button class="btn-clo float-end"><img src="/src/img/x-octagon-fill.svg"></button>
+        </div>
+        <ul class="navbar-nav">
+          <li class="nav-item active btn-te"> <a class="nav-link" href="/">Home </a> </li>
+          <li class="nav-item active btn-te"> <a class="nav-link" href="/?pagina=dicas">Dicas</a> </li>
+          <li class="nav-item active btn-te"> <a class="nav-link" href="#">Cadastro</a> </li>
+
+          </li>
+        </ul>
+
+      </div> <!-- container-fluid.// -->
+    </nav>
+    </header>
+
+
+
+
+    {{area-dinamica}}
+
+    <script src="./src/scripts/clipboard.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="/src/scripts/menu_mob.js"></script>
+    <!-- <script src="/src/scripts/placa.js"></script> -->
+    <script src="/src/scripts/copy.js"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
+      $(function () {
+        $('.btn').popover({container: 'body'})
+      })
+    </script>
+</body>
+
+</html>
