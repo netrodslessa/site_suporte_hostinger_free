@@ -1,6 +1,5 @@
 <?php
 
-echo 'teste';
 class Dicas
 {
   public static function selectAllI()

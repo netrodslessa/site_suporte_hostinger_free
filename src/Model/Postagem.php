@@ -93,7 +93,82 @@ class Postagem
     }
     return $resultado;
   }
+  public static function selecionaPorLinkId($idPost){
+    $con = Connetion::getConn();
+
+    $sql = "SELECT * FROM links WHERE id = :id";
+    $sql = $con->prepare($sql);
+    $sql -> bindValue(':id', $idPost, PDO::PARAM_INT);
+    $sql -> execute();
+
+    $resultado = $sql->fetchObject('Postagem');
+
+    if (!$resultado){
+      throw new Exception("Não foi encontrado nenhum registro!");
+    }
+    return $resultado;
+  }
+  public static function updatelinks($params){
+    $con = Connetion::getConn();
+    $sql = 'UPDATE links SET link = :lin, nome = :nom, categoria = :cat WHERE id = :id';
+    $sql= $con->prepare($sql);
+    $sql->bindValue(':id', $params['id']);
+    $sql->bindValue(':lin', $params['link']);
+    $sql->bindValue(':nom', $params['nome']);
+    $sql->bindValue(':cat', $params['categoria']);
+    $resultado = $sql->execute();
+
+    if ($resultado == 0){
+      throw new Exception("Falha ao alterar");
+      return false;
+    }
+    return true;
+  }
+  public static function updatedicas($params){
+    $con = Connetion::getConn();
+    $sql = 'UPDATE dicas SET titulo = :tit,texto = :tex WHERE id = :id';
+    $sql= $con->prepare($sql);
+    $sql->bindValue(':id', $params['id']);
+    $sql->bindValue(':tit', $params['titulo']);
+    $sql->bindValue(':tex', $params['texto']);
+    $resultado = $sql->execute();
+
+    if ($resultado == 0){
+      throw new Exception("Falha ao alterar");
+      return false;
+    }
+    return true;
+
+  }
+  public static function deletedicas($id){
+    $con = Connetion::getConn();
+    $sql = 'DELETE FROM dicas  WHERE id = :id';
+    $sql= $con->prepare($sql);
+    $sql->bindValue(':id', $id['id']);
+    $resultado = $sql->execute();
+
+    if ($resultado == 0){
+      throw new Exception("Falha ao apagar");
+      return false;
+    }
+    return true;
+  }
 
 
+
+  public static function deletedinks($id){
+    $con = Connetion::getConn();
+    $sql = 'DELETE FROM links  WHERE id = :id';
+    $sql= $con->prepare($sql);
+    $sql->bindValue(':id', $id['id']);
+
+    $resultado = $sql->execute();
+
+    if ($resultado == 0){
+      throw new Exception("Falha ao apagar");
+      return false;
+    }
+    return true;
+  }  
 }
 

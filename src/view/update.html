@@ -1,0 +1,23 @@
+<section class="container form_">
+
+<!-- --------------------------------------------------------------------------- -->
+
+  <form method="POST"class='form_imp'  action="?pagina=admin&metodo=updatedicas">
+    <h2>Dicas</h2>
+    <div class="form-group pre_ti">
+      <!-- <label for="exampleFormControlInput1">Nome</label> -->
+      <input type="text" name="titulo" class="form-control" placeholder="titulo"  value="{{titulo}}" >
+    </div>
+    <div class="form-group">
+      <!-- <label for="exampleFormControlSelect1">Select de exemplo</label> -->
+    <div class="form-group">
+      <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
+      <textarea name="texto" class="form-control" rows="3">{{texto}}</textarea>
+    </div>
+    <input type="hidden" name="id" value="{{id}}">
+    <button class="btn nav-item active btn-te " value="Salvar">Alterar</button>
+  </form>
+
+
+
+</section>

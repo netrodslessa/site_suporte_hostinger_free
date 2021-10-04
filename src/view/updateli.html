@@ -1,0 +1,25 @@
+<section class="container form_">
+  <form method="POST" class='form_imp' action="?pagina=admin&metodo=updatelinks">
+    <h2>Links</h2>
+    <div class="form-group">
+      <!-- <label for="exampleFormControlInput1">Nome</label> -->
+      <input type="text" name="nome" value="{{nome}}" class="form-control" placeholder="nome">
+    </div>
+    <div class="form-group">
+      <!-- <label for="exampleFormControlSelect1">Select de exemplo</label> -->
+      <select name="categoria" value="{{categoria}}" class="form-control">
+        <option>InstaSecullum</option>
+        <option>AtSecullum</option>
+        <option>Ferramentas</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <!-- <label for="exampleFormControlTextarea1">Exemplo de textarea</label> -->
+      <input type="text" name="link" value="{{link}}" class="form-control" placeholder="Link">
+    </div>
+
+    <input type="hidden" name="id" value="{{id}}">
+    <button class="btn nav-item active btn-te " value="Salvar">Alterar</button>
+  </form>
+
+  </section>

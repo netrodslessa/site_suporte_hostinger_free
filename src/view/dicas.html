@@ -16,6 +16,8 @@
 
         <button id="copy" data-clipboard-text="{{postagem.texto}}" data-toggle="popover" data-content="Copiado!"><img src="/src/view/content_copy_black_24dp.svg"></button>
         <a href="/?pagina=post&id={{ postagem.id }} " target="_blank"><img src="/src/view/open_in_new_white_24dp.svg" ></a>
+        <button class="btn"><td><a href="/?pagina=admin&metodo=change&id={{postagem.id}}"><img src="/src/view/edit_white_24dp.svg" > </a> </button>
+        <button class="btn"><td><a href="/?pagina=admin&metodo=deletedicas&id={{postagem.id}}"><img src="/src/view/delete_outline_white_24dp.svg" > </a> </button>
       </div>
     </div>
   </div>
