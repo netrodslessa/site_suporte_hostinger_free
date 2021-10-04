@@ -19,6 +19,47 @@ class Postagem
     }
     return $resultado;
   }
+ 
+
+  public static function insertDicas($dadosPost){
+    if (empty($dadosPost['titulo']) OR empty($dadosPost['texto'])){
+      throw new Exception("Preencha Todos os Campos!");
+      return  false;
+      
+    }
+    $con = Connetion::getConn();
+
+    $sql = $con->prepare('INSERT INTO dicas (titulo, texto) VALUES (:tit, :tex)');
+    $sql -> bindValue('tit', $dadosPost['titulo']);
+    $sql -> bindValue('tex', $dadosPost['texto']);
+    $res = $sql->execute();
+
+    if($res == 0){
+      throw new Exception('Falha ao inserir os dados!');
+      return false;
+    }
+    return true;  
+  }
+  public static function insertLinks($dadosPost){
+    if (empty($dadosPost['nome']) OR empty($dadosPost['link']) OR empty($dadosPost['categoria'])){
+      throw new Exception("Preencha Todos os Campos!");
+      return  false;
+      
+    }
+    $con = Connetion::getConn();
+
+    $sql = $con->prepare('INSERT INTO links (link, nome, categoria) VALUES (:lin, :nom, :cat)');
+    $sql -> bindValue('lin', $dadosPost['link']);
+    $sql -> bindValue('nom', $dadosPost['nome']);
+    $sql -> bindValue('cat', $dadosPost['categoria']);
+    $res = $sql->execute();
+
+    if($res == 0){
+      throw new Exception('Falha ao inserir os dados!');
+      return false;
+    }
+    return true;  
+  }
   public static function selecionaPorId($idPost){
     $con = Connetion::getConn();
 
@@ -55,3 +96,4 @@ class Postagem
 
 
 }
+

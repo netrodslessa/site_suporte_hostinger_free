@@ -12,7 +12,7 @@ class PostController
       $loader = new \Twig\Loader\FilesystemLoader('src/View');
       $twig = new \Twig\Environment($loader);
       $template = $twig->load('single.html');
-      var_dump($postagem);
+      // var_dump($postagem);
 
       $parametros = array();
       $parametros['titulo'] = $postagem->titulo;

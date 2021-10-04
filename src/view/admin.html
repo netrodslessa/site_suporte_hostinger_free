@@ -1,0 +1,43 @@
+<section class="container form_">
+  <div class="btn-group new" role="group" aria-label="Exemplo básico">
+    <a href="/?pagina=admin&metodo=create" class="btn-te btn">Novo</a>
+  </div>
+  <div class="container ">
+    <div class="row ">
+      <div class="col">
+
+        <table class="table table-dark">
+          <div class="">
+            <h2>Links</h2>
+            <thead>
+
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Link</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Apagar</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for postagem in postagens %}
+              <tr>
+                <th scope="row">{{postagem.id}}</th>
+                <td>{{postagem.nome}}</td>
+                <td>{{postagem.link}}</td>
+                <td>{{postagem.categoria}}</td>
+                <td><a href="/?pagina=admin&metodo=change&id={{postagem.id}}"><img src="/src/view/edit_white_24dp.svg" > </a></td>
+                <td><a href=""><img src="/src/view/delete_outline_white_24dp.svg" > </a></td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </div>
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+</section>

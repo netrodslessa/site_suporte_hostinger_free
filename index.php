@@ -6,6 +6,7 @@
   require_once "src/Controller/ErroController.php";
   require_once "src/Controller/PostController.php";
   require_once "src/Controller/DicasController.php";
+  require_once "src/Controller/AdminController.php";
   require_once "src/Model/Postagem.php";
   $template = file_get_contents('src/template/extrutura.html');
   // $links = file_get_contents('src/view/link.html');

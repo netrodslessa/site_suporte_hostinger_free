@@ -1,28 +1,28 @@
 <section class="container">
-    <article>
-      <header>
-        <nav class="accordion navbar navbar-dark bg-dark  menu_itens btn" id="accordionExample" data-original-title="" title="">
-          <div class="">
-            <div class="" id="headingOne">
-              <h5>
-                <button class="btn-te-" type="button" data-toggle="collapse" data-target="#te37" aria-expanded="true" aria-controls="collapseOne">
-                  <strong>{{titulo}}</strong>
-                </button>
-              </h5>
-            </div>
-      </header>
-      <div id="te37" class="collapse text_" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">{{texto}}
-  
-          <button class="btn" data-clipboard-text="{{textp}}" data-toggle="popover" data-content="Copiado!" data-original-title="" title=""><img src="./src/content_copy_black_24dp.svg"> Copiar</button>
-        </div>
+  <article>
+    <header>
+      <nav class="accordion navbar navbar-dark bg-dark  menu_itens btn" id="accordionExample">
+        <div class="">
+          <div class="" id="headingOne">
+            <h5>
+              <button class="btn-te-" type="button" data-toggle="collapse" data-target="#te{{id}}" aria-expanded="true"
+                aria-controls="collapseOne">
+                <strong>{{titulo}}</strong>
+              </button>
+            </h5>
+          </div>
+    </header>
+    <div id="te{{id}}" class="collapse text_" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body texto-single">{{texto}}
+
+        <button id="copy" class="btn" data-clipboard-text="{{texto}}" data-toggle="popover" data-content="Copiado!"
+          data-original-title="" title=""><img src="/src/view/content_copy_black_24dp.svg"> </button>
+        <button class="btn"><td><a href="/?pagina=single&metodo=change&id={{id}}"><img src="/src/view/edit_white_24dp.svg" > </a> </button>
+
       </div>
     </div>
-  </nav>
-    </article>
+    </div>
+    </nav>
+  </article>
 
 </section>
-
-
-
-    

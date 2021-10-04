@@ -1,23 +1,21 @@
-<br>
-<br>
-<br>
-<br>
+
 <h2 id="dicas">Dicas</h2>
 {% for postagem in postagens %}
 <nav class="accordion navbar navbar-dark bg-dark  menu_itens btn" id="accordionExample" data-original-title="" title="">
   <div class="">
     <div class="" id="headingOne">
       <h5>
-        <button class="btn-te-" type="button" data-toggle="collapse" data-target="#te31" aria-expanded="true" aria-controls="collapseOne">
-          <a href="/?pagina=post&id={{ postagem.id }}"><strong>{{postagem.titulo}}</strong></a>
+        <button class="btn-te-" type="button" data-toggle="collapse" data-target="#te{{postagem.id}}" aria-expanded="true" aria-controls="collapseOne">
+         <strong>{{postagem.titulo}}</strong>
         </button>
       </h5>
     </div>
 
-    <div id="te31" class="text_ collapse show" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
-      <div class="card-body">{{postagem.texto}}
+    <div id="te{{postagem.id}}" class="text_ collapse " aria-labelledby="headingOne" data-parent="#accordionExample" >
+      <div  class="card-body">{{postagem.texto}}
 
-        <button class="btn" data-clipboard-text="{{postagem.texto}}" data-toggle="popover" data-content="Copiado!" data-original-title="" title=""><img src="./src/content_copy_black_24dp.svg"> Copiar</button>
+        <button id="copy" data-clipboard-text="{{postagem.texto}}" data-toggle="popover" data-content="Copiado!"><img src="/src/view/content_copy_black_24dp.svg"></button>
+        <a href="/?pagina=post&id={{ postagem.id }} " target="_blank"><img src="/src/view/open_in_new_white_24dp.svg" ></a>
       </div>
     </div>
   </div>

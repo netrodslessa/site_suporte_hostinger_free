@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="m2br.dialog.css" />
+<script src="jquery.js"></script>
+<script src="jquery.m2brdialog.pack.js"></script>
+
+<form name="frm-newsletter" id="frm-newsletter" method="post" action="">
+  <label for="email">Seu e-mail</label>
+  <input type="text" name="email" id="email" size="60" />
+  <input type="button" id="btn-newsletter" value="OK" />
+</form>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#btn-newsletter').m2brDialog({
+      tipo      : 'erro',
+      titulo      : 'Erro!',
+      texto      : 'Por favor, preencha o campo e-mail',
+      condicao    : {
+          origem    : function() {
+            return ($('#email').val() ? true : false);
+    },
+          retorno    : function() { return true; }
+      }
+  });
+});
+</script>
